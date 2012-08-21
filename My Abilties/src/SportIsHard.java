@@ -11,18 +11,18 @@
  * now every time you cut, you most likely to do it in 45 degrees so i took it as a basis degree( if i had to deal with different degrees
  * it would have been a lot harder.
  * so basically each time you cut the turn you create a triangle like this
- *   ----------
+ * |-/--------\-|
  * |/          \|
  * |            |
  * |            | 
  * |            |
  * |\          /|
- *   ----------
+ * |-\--------/-|
  * so when you cut a bit of the round you cut both the width and the length of the field in the same amount.
- * so thats why i have current cut and lastcut.
+ * so thats why i have currentcut and lastcut.
  * however when you cut you run the length of the remaining distance in the side time the square root of 2(x/sin90 = cut/sin45)
  * so thats why i added it each time
- * i wanted to make it a little funny (because lets face it its not so complicated piece of code) so i added quite a lot of useless lines
+ * i wanted to make it a little funny (because lets face it its not a complicated piece of code at all) so i added quite a lot of useless lines
  * just for fun.(prob wont do in a real project).
  * 
  * now last there is the actual cut which vairy from 0 to 4 meters in length.
@@ -36,7 +36,7 @@ public class SportIsHard {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		double run, runRatio1, runRatio2, eachRoundLength;
+		double run, runRatio1, runRatio2, eachRoundLength;// run = estimated run length in the begining of the run, ratios is the field ratio, and eachroundlength well you know.
 		System.out.println("Enter the length of the entire run:");
 		run = in.nextDouble();
 		System.out.println("Enter the length of the each round:");
@@ -72,11 +72,12 @@ public class SportIsHard {
 			System.out.println("Width:");
 			runRatio2 = in.nextDouble();
 		}
+		// calculating the length and the width of the field. primrly it was used in the the loop, however the loop was changed when a better
+		// why of solving the problem was found, so i left it just for the random cut size action
 		double length = (runRatio1/(2*(runRatio1+runRatio2)))*(eachRoundLength/2);
 		double width = (runRatio2/(2*(runRatio1+runRatio2)))*(eachRoundLength/2);
 		double totalRounds =  run/eachRoundLength;
-		// add a check if round number is round
-		int realRun=0;
+		int realRun=0;// the total value of cuts in meters
 		int currentCut,lastCut=0;
 		for (int i = 0; i < totalRounds*2; i++) 
 		{
