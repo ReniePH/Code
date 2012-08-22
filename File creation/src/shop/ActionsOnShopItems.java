@@ -1,5 +1,9 @@
+package shop;
 import java.io.*;
 import java.util.Scanner;
+
+import IO.FileIO;
+
 
 
 public class ActionsOnShopItems {
@@ -7,10 +11,12 @@ public class ActionsOnShopItems {
 	public static void actions(ShopItemList shop) throws IOException
 	{
 		Scanner in = new Scanner(System.in);
-		
-		boolean con = true;//the condition for the loop to start over, once "exit" is selected it becomes false
-		String itemName;//the item name for the "add item" option
-		int itemPrice;//the item price for the "add item" option
+		//the condition for the loop to start over, once "exit" is selected it becomes false
+		boolean con = true;
+		//the item name for the "add item" option
+		String itemName;
+		//the item price for the "add item" option
+		int itemPrice;
 		
 		while(con)
 		{
@@ -37,14 +43,16 @@ public class ActionsOnShopItems {
 					case 3:
 						System.out.println(shop.toString());
 						break;
-					case 4:// exit option. once selected the file is rewritten from the data inside the list. note that in the loop the data is virtual and does not save in case of input error
-						FileReadingAndRewriting.rewrite(shop,"shop.txt");
+					// exit option. once selected the file is rewritten from the data inside the list. note that in the loop the data is virtual and does not save in case of input error
+					case 4:
+						FileIO.rewrite(shop,"shop.txt");
 						con = false;
 						break;
 				}
 				
 			}
-			in.close();// closes scanner in
+			// closes scanner in
+			in.close();
 	}
 
 }

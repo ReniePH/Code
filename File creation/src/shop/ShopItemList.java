@@ -1,3 +1,4 @@
+package shop;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -5,11 +6,13 @@ import java.util.List;
 public class ShopItemList {
 	public List<Shop> shop;
 	
-	public ShopItemList()//Constructor 
+	//Constructor
+	public ShopItemList() 
 	{
 		this.shop = new ArrayList<Shop>();
 	}
-	public void add(String name, int price)// adds another item
+	// adds another item
+	public void add(String name, int price)
 	{
 		shop.add(new Shop(name,price));
 	}
