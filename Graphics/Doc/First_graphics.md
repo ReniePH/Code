@@ -1,7 +1,8 @@
 #### My first try with graphic packages
  
-### Main
- * Calls the Frame class which is responsible for creating the window
+ ### Main
+
+* Calls the Frame class which is responsible for creating the window
  
  ### Frame
  * Creates the window with the custom values I gave it
