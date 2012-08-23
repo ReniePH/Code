@@ -1,6 +1,6 @@
 #### My first try with graphic packages
  
- ### Main
+### Main
  * Calls the Frame class which is responsible for creating the window
  
  ### Frame
