@@ -92,7 +92,7 @@ public class SportIsHard {
 		realRun = (int)run-realRun;
 		System.out.println("the real run was "+realRun+" meters");
 		System.out.println("Thats only "+(realRun/(run/100))+"% of the run");
-		
+		in.close();
 
 	}
 	// returns the part of the run that is taken off

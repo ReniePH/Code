@@ -18,6 +18,8 @@ public class Frame {
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// creates a new object that will contain the instructions for the drawing
 		InstructionsForDrawing d = new InstructionsForDrawing();
+		// adds a keylistener
+		d.addKeyListener(d);
 		// adds the object instructions to the JFrame object
 		f.add(d);
 	}

@@ -1,18 +1,21 @@
 package graphics;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-import keys.KeyControl;
-public class InstructionsForDrawing extends JPanel{
+public class InstructionsForDrawing extends JPanel implements KeyListener{
+	
+	// for saving g later
+	protected Graphics g1;
 	
 	public void paintComponent(Graphics g)
 	{
-		//please explain to me what this action does
 		super.paintComponent(g);
+		g1=g;
 		BlueRect(g);
 		RedCircle(g);
 		GreenDiamond(g);
-		KeyControl kc = new KeyControl();
 	}
 	// set instructions to build a non filled rectangle in the color blue
 	private void BlueRect(Graphics g)
@@ -35,9 +38,39 @@ public class InstructionsForDrawing extends JPanel{
 		g.drawLine(200,200,250,150);
 		g.drawLine(300,200,250,150);
 	}
+	
 	protected void clear() {
 		super.removeAll();
 		super.updateUI();
+	}
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// in case the letter a in pressed
+		if(e.getKeyCode() == KeyEvent.VK_A)
+		{
+			System.out.println("IT WORKS!");
+			this.clear();
+			this.RedCircle(g1);
+		}
+		// in case the letter b in pressed
+		else if(e.getKeyCode() == KeyEvent.VK_B)
+		{
+			this.GreenDiamond(g1);
+			this.BlueRect(g1);
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		
+		
 	}
 
 
