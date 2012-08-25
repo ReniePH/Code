@@ -13,7 +13,11 @@ public class RandomGraphicsDrawing extends JPanel{
 		super.paintComponent(g);
 		g2 = (Graphics2D)g;
 		this.polygon = new Polygon[(int)(Math.random()*4)];
-		
+		for (int i = 0; i < this.polygon.length; i++) {
+			//does this creates a random polygon?
+			this.polygon[i] = new Polygon();
+		}
+		g2.drawPolygon(this.polygon[0]);
 	}
 
 }

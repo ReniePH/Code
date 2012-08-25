@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 
 public class WindowFrame {
 	
-	public void windowfalling()
+	public static void windowfalling()
 	{
 		//creates the window with the title "Day 2 Success"
 		JFrame wf = new JFrame("Falling From Heaven");
