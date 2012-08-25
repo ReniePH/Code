@@ -1,7 +1,7 @@
 package window;
 
 public class Tick {
-	public boolean milisec50()
+	public static boolean milisec50()
 	{
 		long time;
 		time = System.currentTimeMillis();

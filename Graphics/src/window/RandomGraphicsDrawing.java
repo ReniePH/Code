@@ -2,7 +2,6 @@ package window;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.Polygon;
 
 public class RandomGraphicsDrawing extends JPanel{
 	
@@ -17,7 +16,35 @@ public class RandomGraphicsDrawing extends JPanel{
 			//does this creates a random polygon?
 			this.polygon[i] = new Polygon();
 		}
-		g2.drawPolygon(this.polygon[0]);
+		//g2.drawPolygon(this.polygon[0]);
+	}
+	
+	//drops all the shapes one pixel in every 50 milliseconds 
+	public void makeThemFall()
+	{
+		for (int i = 0; i < this.polygon.length; i++) 
+		{
+			while(this.polygon[i].getBoundingBox().getLocation().y < WindowFrame.getHeight())
+			{
+				g2.drawPolygon(this.polygon[i]);
+				while(!Tick.milisec50())
+				{
+					//delays by 50 milliseconds
+				}
+				fallOne(this.polygon[i].ypoints);
+				
+			}
+			
+		}
+		// should i use it?
+		g2.dispose();
+	}
+	//drops the shape one pixel
+	private void fallOne(int[] ypoints) {
+		for (int i = 0; i < ypoints.length; i++) {
+			ypoints[i] -= 1;
+		}
+		
 	}
 
 }
