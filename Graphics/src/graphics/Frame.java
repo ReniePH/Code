@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 
 public class Frame {
 	
-	public static void window500X500()
+	public static void window()
 	{
 		//creates the window with the title "Day 2 Success"
 		JFrame f = new JFrame("Day 2 Success");

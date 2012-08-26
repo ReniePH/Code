@@ -8,7 +8,7 @@ public class Main {
 		if(in.nextInt() == 1)
 		{
 		// calls the Frame class which is responsible for creating the window
-		graphics.Frame.window500X500();
+		graphics.Frame.window();
 		}
 		else
 			window.WindowFrame.windowfalling();
