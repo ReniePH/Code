@@ -12,6 +12,7 @@ public class Main {
 		}
 		else
 			window.WindowFrame.windowfalling();
+		in.close();
 
 	}
 
