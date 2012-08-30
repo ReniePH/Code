@@ -63,7 +63,10 @@ public class InstructionsForDrawing extends JPanel implements KeyListener{
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		
+		if(e.getKeyCode() == KeyEvent.VK_A)
+		{
+			System.out.println("released A");
+		}
 		
 	}
 
